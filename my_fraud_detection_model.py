@@ -366,24 +366,3 @@ def rf_bdry_module(recall_acc, roc_auc):
 
 bdry_dict = {'lr': lr_bdry_module,'svm_rbf': svm_rbf_bdry_module,
              'svm_poly': svm_poly_bdry_module, 'rf': rf_bdry_module}
-################################################################################
-
-# Implementation of our model according to these parameters setting.:
-data = pd.read_csv("creditcard.csv")
-data = data.drop(['Time'], axis = 1)
-data = normalize_feature(data, amount_only = True)
-
-result, control, params = run(data = data, mode = mode, ratio = ratio, iteration1 = iteration1, bdry_dict = bdry_dict)
-print("Hyperparameter values:")
-print("ratio: ", ratio, " and mode: ", mode)
-print("Result of our model which a voting models among knn, svm_rbf, svm_poly, lr and rf:")
-print("mean_recall is ", result[0], " and std is ", result[1])
-print("mean_auc is ", result[2], " and std is ", result[3])
-print()
-print("Control experiments of logistic regression models with different threshold")
-print("i.e., fraud is predicted if the probability value exceeds the threshold")
-for i, param in enumerate(params):
-    print("Threshold", param)
-    print("mean_recall is ", control[0][i], " and std is ", control[1][i])
-    print("mean_auc is ", control[2][i], " and std is ", control[3][i])
-    print()
