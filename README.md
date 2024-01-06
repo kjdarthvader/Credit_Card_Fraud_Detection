@@ -38,6 +38,10 @@ In the intricate domain of financial security, the accurate classification of cr
 - **Hyperparameter Optimization:** Focuses on fine-tuning the 'ratio' and 'mode' parameters, critical for balancing sensitivity and specificity in the model's predictions.
 - **Evaluation Strategy:** Rigorously evaluates model performance using precision-recall curves, ROC-AUC scores, and recall scores to ensure high detection rates with minimal false alarms.
 
+## Flowchart 
+
+![image](https://github.com/kjdarthvader/Credit_Card_Fraud_Detection/blob/main/CCFD_Technical_Flowchart.png)
+
 ## Results and Analysis 
 The ensemble model demonstrates high efficacy in fraud detection, with the following key metrics:
 - **Mean Recall:** 0.9479 (±0.0205)
